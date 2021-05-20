@@ -2,8 +2,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body {
   background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background-color: rgb(255, 255, 255, 0.8);
+  box-shadow: gray 5px 5px 10px;
+  padding: 7em;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
 }

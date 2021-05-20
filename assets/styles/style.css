@@ -11,12 +11,18 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-image: url('https://source.unsplash.com/1600x900/?landscape');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .card {
-  background-color: rgb(255, 255, 255, 0.8);
+  background-color: rgb(104, 103, 103, 0.7);
+  color: white;
+  font-size: 20px;
   box-shadow: gray 5px 5px 10px;
-  padding: 7em;
+  padding: 5em;
   border-radius: 20px;
   width: 100%;
   max-width: 420px;

@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: aquamarine;
+  background-color: gray;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,13 +18,39 @@ body {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(104, 103, 103, 0.7);
   color: white;
   font-size: 20px;
   box-shadow: gray 5px 5px 10px;
-  padding: 5em;
+  padding: 2em;
+  margin: 2em;
   border-radius: 20px;
   width: 100%;
   max-width: 420px;
   text-align: center;
+}
+
+.card input::placeholder {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.search {
+  border-radius: 20px;
+}
+
+.search > button {
+  border-radius: 20px;
+}
+
+.weather {
+  text-align: left;
+  font-size: 14px;
+}
+
+.main-weather {
+  text-align: center;
+  padding: 10px 0;
 }

@@ -10,7 +10,7 @@
 <body>
   <div class="card">
     <div class="search d-flex justify-content-center pb-3">
-      <input type="text" class="search" name="search" id="search-input">
+      <input type="text" class="search" name="search" id="search-input" placeholder="Search...">
       <button><i class="fas fa-search mx-1"></i></button>
       <!-- <label for="exampleDataList" class="form-label">Datalist example</label>
             <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
@@ -24,9 +24,11 @@
     </div>
 
     <div class="weather">
-      <h2 class="city" id="city">Weather</h2>
-      <div class="temp" id="temp">Local Temperature 23°C</div>
-      <img src="" alt="" class="icon" id="icon">
+      <div class="main-weather">
+        <h2 class="city" id="city">Weather</h2>
+        <div class="temp" id="temp">Local Temperature 23°C</div>
+        <img src="" alt="" class="icon" id="icon">
+      </div>
       <div class="description" id="description">description: Sunny</div>
       <div class="humidity" id="humidity">humidity: 75%</div>
       <div class="wind" id="wind">wind speed: 6km/h</div>

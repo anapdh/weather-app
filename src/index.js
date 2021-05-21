@@ -13,15 +13,21 @@ let weather = {
       .then((response) => response.json())
       .then((data) => this.displayWeather(data));
   },
+
   displayWeather: function(data) {
     const { name } = data;
     const { icon, description } = data.weather[0]; //this property brings an array inside the object
     const { temp, humidity } = data.main;
     const { speed } = data.wind;
     console.table(name, icon, description, temp, humidity, speed);
-    //document.querySelector('city').innerHTML = "Weather in " + name
-  }
-}
+    document.getElementById('city').innerText = "Weather in " + name
+    document.getElementById('temp').innerText = temp + "°C";
+    document.getElementById('icon').src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
+    document.getElementById('description').innerText = description;
+    document.getElementById('humidity').innerText = "humidity: " + humidity + "%";
+    document.getElementById('wind').innerText = "wind: " + speed + "km/h";
+  },
+};
 
 //api.openweathermap.org/data/2.5/weather?q={city name}&units=metric&appid={API key}
 

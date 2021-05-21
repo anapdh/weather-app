@@ -37,6 +37,12 @@ document.getElementById('search-btn').addEventListener('click', () => {
   weather.search();
 });
 
+document.getElementById('search-input').addEventListener('keyup', (e) => {
+  if (e.key == 'Enter') {
+    weather.search();
+  }
+});
+
 //api.openweathermap.org/data/2.5/weather?q={city name}&units=metric&appid={API key}
 
 //api.openweathermap.org/data/2.5/weather?q=Porto Alegre&units=metric&appid=6122d350292c9bfc5150c7ce08ef1c41

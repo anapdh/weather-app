@@ -52,6 +52,7 @@ body {
 .weather {
   text-align: left;
   font-size: 14px;
+  text-transform: capitalize;
 }
 
 .main-weather {

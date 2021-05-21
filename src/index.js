@@ -8,7 +8,7 @@ import '../assets/styles/style.css';
 
 let weather = {
   "apiKey": "6122d350292c9bfc5150c7ce08ef1c41",
-  fetchWeather: function (city) {
+  fetchWeather: function(city) {
     fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + this.apiKey)
       .then((response) => response.json())
       .then((data) => this.displayWeather(data));
@@ -27,7 +27,15 @@ let weather = {
     document.getElementById('humidity').innerText = "humidity: " + humidity + "%";
     document.getElementById('wind').innerText = "wind: " + speed + "km/h";
   },
+
+  search: function() {
+    this.fetchWeather(document.getElementById('search-input').value);
+  }
 };
+
+document.getElementById('search-btn').addEventListener('click', () => {
+  weather.search();
+});
 
 //api.openweathermap.org/data/2.5/weather?q={city name}&units=metric&appid={API key}
 

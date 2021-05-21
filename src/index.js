@@ -19,7 +19,6 @@ let weather = {
     const { icon, description } = data.weather[0]; //this property brings an array inside the object
     const { temp, humidity } = data.main;
     const { speed } = data.wind;
-    console.table(name, icon, description, temp, humidity, speed);
     document.getElementById('city').innerText = "Weather in " + name
     document.getElementById('temp').innerText = temp + "°C";
     document.getElementById('icon').src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
@@ -27,6 +26,7 @@ let weather = {
     document.getElementById('humidity').innerText = "humidity: " + humidity + "%";
     document.getElementById('wind').innerText = "wind: " + speed + "km/h";
     
+    document.querySelector('.weather').classList.remove('loading');
     document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + name + "')"
   },
 
@@ -46,7 +46,3 @@ document.getElementById('search-input').addEventListener('keyup', (e) => {
 });
 
 weather.fetchWeather("Paris");
-
-//api.openweathermap.org/data/2.5/weather?q={city name}&units=metric&appid={API key}
-
-//api.openweathermap.org/data/2.5/weather?q=Porto Alegre&units=metric&appid=6122d350292c9bfc5150c7ce08ef1c41

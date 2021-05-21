@@ -11,7 +11,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('https://source.unsplash.com/1600x900/?landscape');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -34,15 +33,12 @@ body {
 
 .search {
   width: 100%;
+  border-radius: 20px;
 }
 
 .search > input {
   padding: 0 15px;
   font-size: 16px;
-}
-
-.search {
-  border-radius: 20px;
 }
 
 .search > button {
@@ -63,4 +59,18 @@ body {
   text-align: left;
   font-size: 18px;
   text-transform: capitalize;
+}
+
+.loading {
+  visibility: hidden;
+  max-height: 20px;
+  position: relative;
+}
+
+.loading::after {
+  visibility: visible;
+  content: "Loading content...";
+  color: black;
+  position: absolute;
+  top: 0;
 }

@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 
 body {
@@ -32,8 +32,12 @@ body {
   text-align: center;
 }
 
-.card input::placeholder {
-  padding: 10px;
+.search {
+  width: 100%;
+}
+
+.search > input {
+  padding: 0 15px;
   font-size: 16px;
 }
 
@@ -46,16 +50,17 @@ body {
 }
 
 .temp {
+  margin-top: 30px;
   font-size: 32px;
+  text-shadow: gray 2px 2px 2px;
+}
+
+.main-weather {
+  text-align: center;
 }
 
 .weather {
   text-align: left;
   font-size: 18px;
   text-transform: capitalize;
-}
-
-.main-weather {
-  text-align: center;
-  padding: 10px 0;
 }

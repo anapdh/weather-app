@@ -26,6 +26,8 @@ let weather = {
     document.getElementById('description').innerText = description;
     document.getElementById('humidity').innerText = "humidity: " + humidity + "%";
     document.getElementById('wind').innerText = "wind: " + speed + "km/h";
+    
+    document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + name + "')"
   },
 
   search: function() {
@@ -42,6 +44,8 @@ document.getElementById('search-input').addEventListener('keyup', (e) => {
     weather.search();
   }
 });
+
+weather.fetchWeather("Paris");
 
 //api.openweathermap.org/data/2.5/weather?q={city name}&units=metric&appid={API key}
 

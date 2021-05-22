@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet) ![](https://img.shields.io/badge/JavaScript-yellow)
 
-# TO DO LIST
+# WEATHER APP
 
 > A weather forecast site using the [OpenWeather](https://openweathermap.org/) API.
 

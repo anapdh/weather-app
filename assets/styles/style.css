@@ -45,10 +45,11 @@ body {
   border-radius: 20px;
 }
 
-.temp {
+.temps-section {
   margin-top: 30px;
   font-size: 32px;
   text-shadow: gray 2px 2px 2px;
+  cursor: pointer;
 }
 
 .main-weather {
@@ -73,4 +74,13 @@ body {
   color: black;
   position: absolute;
   top: 0;
+}
+
+.temp-btn {
+  background-color: rgb(255, 255, 255, 0.6);
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  box-shadow: gray 5px 5px 10px;
+  padding: 8px;
+  border-radius: 20px;
 }

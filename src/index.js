@@ -5,6 +5,8 @@ import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 import '../assets/styles/style.css';
 
+const apiKey = '6122d350292c9bfc5150c7ce08ef1c41';
+
 window.addEventListener('load', () => {
   let long;
   let lat;
@@ -14,7 +16,7 @@ window.addEventListener('load', () => {
       long = pos.coords.longitude;
       lat = pos.coords.latitude;
       
-      const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=6122d350292c9bfc5150c7ce08ef1c41`;
+      const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=${apiKey}`;
       fetch(api)
       .then((response) => response.json())
       .then((data) => displayWeather(data));
@@ -23,13 +25,11 @@ window.addEventListener('load', () => {
 });
 
 const weather = {
-  apiKey: '6122d350292c9bfc5150c7ce08ef1c41',
   fetchWeather(city) {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${this.apiKey}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`)
       .then((response) => response.json())
       .then((data) => displayWeather(data));
   },
-
   search() {
     this.fetchWeather(document.getElementById('search-input').value);
   },
@@ -60,9 +60,3 @@ document.getElementById('search-input').addEventListener('keyup', (e) => {
     weather.search();
   }
 });
-
-document.getElementById('temp-btn').addEventListener('click', () => {
-  //weather.search();
-});
-
-//weather.fetchWeather('Paris');

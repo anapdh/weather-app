@@ -5,7 +5,11 @@ import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 import '../assets/styles/style.css';
 
+//LOGIC ELEMENTS
+
 const apiKey = '6122d350292c9bfc5150c7ce08ef1c41';
+const setTempType = document.getElementById('temps-section');
+const setTemp = document.getElementById('temp');
 
 window.addEventListener('load', () => {
   let long;
@@ -35,13 +39,15 @@ const weather = {
   },
 };
 
+// DOM ELEMENTS
+
 const displayWeather = (data) => {
   const { name } = data;
   const { icon, description } = data.weather[0];
   const { temp, humidity } = data.main;
   const { speed } = data.wind;
   document.getElementById('city').innerText = `Weather in ${name}`;
-  document.getElementById('tempC').innerText = `${temp}°C`;
+  document.getElementById('temp').innerText = `${temp}°C`;
   document.getElementById('icon').src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
   document.getElementById('description').innerText = description;
   document.getElementById('humidity').innerText = `humidity: ${humidity}%`;
@@ -49,6 +55,16 @@ const displayWeather = (data) => {
 
   document.querySelector('.weather').classList.remove('loading');
   document.body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${name}')`;
+
+  const Fahrenheit = (temp * (9 / 5)) + 32;
+
+  setTempType.addEventListener('click', () => {
+    if (setTemp.textContent === `${temp}°C`) {
+      setTemp.textContent = (Fahrenheit + "°F");
+    } else {
+      setTemp.textContent = `${temp}°C`;
+    }
+  });
 };
 
 document.getElementById('search-btn').addEventListener('click', () => {

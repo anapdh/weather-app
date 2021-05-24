@@ -47,9 +47,17 @@ body {
 
 .temps-section {
   margin-top: 30px;
-  font-size: 32px;
+  font-size: 40px;
   text-shadow: gray 2px 2px 2px;
   cursor: pointer;
+}
+
+#convert {
+  font-size: 18px;
+  font-style: italic;
+  text-transform: none;
+  text-decoration: wavy;
+  text-shadow: none;
 }
 
 .main-weather {

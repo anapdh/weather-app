@@ -24,17 +24,20 @@ const displayWeather = (data) => {
   document.getElementById('wind').innerText = `wind: ${speed}km/h`;
 
   document.querySelector('.weather').classList.remove('loading');
-  document.body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${name}')`;
+  document.body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${description}')`;
 
   // LOGIC
 
   const Fahrenheit = (temp * (9 / 5)) + 32;
+  const convert = document.getElementById('convert');
 
   setTempType.addEventListener('click', () => {
     if (setTemp.textContent === `${temp}°C`) {
       setTemp.textContent = (`${Fahrenheit}°F`);
+      convert.textContent = "click for Celcius"
     } else {
       setTemp.textContent = `${temp}°C`;
+      convert.textContent = "click for Farenheint"
     }
   });
 };

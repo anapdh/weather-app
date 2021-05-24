@@ -8,8 +8,6 @@ import '../assets/styles/style.css';
 // DOM
 
 const apiKey = '6122d350292c9bfc5150c7ce08ef1c41';
-const setTempType = document.getElementById('temps-section');
-const setTemp = document.getElementById('temp');
 
 const displayWeather = (data) => {
   const { name } = data;
@@ -17,7 +15,7 @@ const displayWeather = (data) => {
   const { temp, humidity } = data.main;
   const { speed } = data.wind;
   document.getElementById('city').innerText = `Weather in ${name}`;
-  document.getElementById('temp').innerText = `${temp}°C`;
+  document.getElementById('temp').innerText = `${temp} C`;
   document.getElementById('icon').src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
   document.getElementById('description').innerText = description;
   document.getElementById('humidity').innerText = `humidity: ${humidity}%`;
@@ -25,21 +23,6 @@ const displayWeather = (data) => {
 
   document.querySelector('.weather').classList.remove('loading');
   document.body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${description}')`;
-
-  // LOGIC
-
-  const Fahrenheit = (temp * (9 / 5)) + 32;
-  const convert = document.getElementById('convert');
-
-  setTempType.addEventListener('click', () => {
-    if (setTemp.textContent === `${temp}°C`) {
-      setTemp.textContent = (`${Fahrenheit}°F`);
-      convert.textContent = "click for Celcius"
-    } else {
-      setTemp.textContent = `${temp}°C`;
-      convert.textContent = "click for Farenheint"
-    }
-  });
 };
 
 window.addEventListener('load', () => {
@@ -48,36 +31,63 @@ window.addEventListener('load', () => {
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((pos) => {
-      long = pos.coords.longitude;
-      lat = pos.coords.latitude;
+    long = pos.coords.longitude;
+    lat = pos.coords.latitude;
 
-      const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=${apiKey}`;
-      fetch(api)
-        .then((response) => response.json())
-        .then((data) => displayWeather(data));
-    });
-  }
+  const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=${apiKey}`;
+  fetch(api)
+    .then((response) => response.json())
+    .then((data) => displayWeather(data));
+  });
+ }
 });
 
 const weather = {
   fetchWeather(city) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`)
       .then((response) => response.json())
-      .then((data) => displayWeather(data));
-  },
-  search() {
-    this.fetchWeather(document.getElementById('search-input').value);
-  },
-};
+      .then(data => {
+        displayWeather(data);
+
+        let temperature = document.getElementById('temp');
+        temperature.addEventListener('click', () => {
+          setTemp(data.main.temp, temperature);
+          console.log(data.main.temp);
+          console.log(temperature);
+        });
+      });
+    },
+  //   search() {
+  //   this.
+  // },
+}
 
 // EVENTS
 
 document.getElementById('search-btn').addEventListener('click', () => {
-  weather.search();
+  weather.fetchWeather(document.getElementById('search-input').value);
+  console.log(document.getElementById('search-input').value);
 });
 
 document.getElementById('search-input').addEventListener('keyup', (e) => {
   if (e.key === 'Enter') {
-    weather.search();
+    weather.fetchWeather(document.getElementById('search-input').value);
   }
 });
+
+const setTemp = (temp, unit) => {
+  const Fahrenheit = ((temp * (9 / 5)) + 32).toFixed(2);
+  const Celsius = temp;
+  const convert = document.getElementById('convert');
+  const findS = unit.innerText.slice(-1);
+
+  console.log(findS);
+
+  if (findS == "C") {
+    unit.textContent = Fahrenheit + "F";
+    convert.textContent = "click for Celsius"
+  } else if (findS == "F") {
+    unit.textContent = Celsius + "C";
+    convert.textContent = "click for Fahrenheint"
+  }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Weather App</title>
+</head>
+<body>
+  <div class="card">
+    <div class="search d-flex justify-content-center pb-3">
+      <input type="text" class="search" name="search" id="search-input" placeholder="Search...">
+      <button id="search-btn"><i class="fas fa-search mx-1"></i></button>
+    </div>
+    <div class="weather loading">
+      <div class="main-weather">
+        <h2 class="city mt-4" id="city">Weather App</h2>
+        <div id="temps-section" class="temps-section">
+          <div class="temp" id="temp"></div>
+          <button id="changeF" class="btn btn-secondary">Fahrenheit</button>
+          <button id="changeC" class="btn btn-secondary">Celsius</button>
+          <img src="" alt="" class="icon" id="icon">
+        </div>
+      </div>
+      <div class="description" id="description"></div>
+      <div class="humidity" id="humidity"></div>
+      <div class="wind" id="wind"></div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

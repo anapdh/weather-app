@@ -1,10 +1,10 @@
-<!-- ![](https://img.shields.io/badge/Microverse-blueviolet) ![](https://img.shields.io/badge/JavaScript-yellow)
+![](https://img.shields.io/badge/Microverse-blueviolet) ![](https://img.shields.io/badge/JavaScript-yellow)
 
-# TO DO LIST
+# WEATHER APP
 
-> This is a JS application made of different modules using webpack.
+> A weather forecast site using the [OpenWeather](https://openweathermap.org/) API.
 
-Original project specification: [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/todo-list)
+Original project specification: [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/weather-app).
 
 
 ## Built With
@@ -14,12 +14,12 @@ Original project specification: [The Odin Project](https://www.theodinproject.co
 
 ## Screenshots
 
-![screenshot](./assets/imgs/screenshot1.png)
----
 ![screenshot](./assets/imgs/screenshot2.png)
+![screenshot](./assets/imgs/screenshot3.png)
+![screenshot](./assets/imgs/screenshot4.png)
 
 ## Live Demo
-[To Do List](https://anapdh.github.io/to-do-list/dist/index.html)
+[Weather App](https://anapdh.github.io/weather-app/dist/index.html)
 
 ## Prerequisites
 
@@ -34,7 +34,7 @@ To get a local copy up and run the project, follow these simple example steps:
 You can download the code to your personal computer cloning the repository using the following command:
 
 ```
-git clone https://github.com/anapdh/to-do-list.git
+git clone https://github.com/anapdh/weather-app.git
 ```
 
 After cloning the repository and opening it in your code editor, run the following code in the terminal:
@@ -59,7 +59,7 @@ Run the application by launching your local webserver and index.html file in the
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/anapdh/to-do-list/issues).
+Feel free to check the [issues page](https://github.com/anapdh/weather-app/issues).
 
 ## Show your support
 
@@ -67,5 +67,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
--->
+This project is [MIT](https://github.com/anapdh/weather-app/blob/develop/LICENSE.md) licensed.

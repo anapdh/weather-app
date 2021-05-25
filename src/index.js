@@ -23,7 +23,16 @@ const displayWeather = (data) => {
 
   document.querySelector('.weather').classList.remove('loading');
   document.body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${description}')`;
+
+  const temperature = document.getElementById('temp');
+  temperature.addEventListener('click', () => {
+  setTemp(data.main.temp, temperature);
+  console.log(data.main.temp);
+  console.log(temperature);
+  });
 };
+
+// LOGIC
 
 window.addEventListener('load', () => {
   let long;
@@ -46,34 +55,9 @@ const weather = {
   fetchWeather(city) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`)
       .then((response) => response.json())
-      .then(data => {
-        displayWeather(data);
-
-        let temperature = document.getElementById('temp');
-        temperature.addEventListener('click', () => {
-          setTemp(data.main.temp, temperature);
-          console.log(data.main.temp);
-          console.log(temperature);
-        });
-      });
-    },
-  //   search() {
-  //   this.
-  // },
-}
-
-// EVENTS
-
-document.getElementById('search-btn').addEventListener('click', () => {
-  weather.fetchWeather(document.getElementById('search-input').value);
-  console.log(document.getElementById('search-input').value);
-});
-
-document.getElementById('search-input').addEventListener('keyup', (e) => {
-  if (e.key === 'Enter') {
-    weather.fetchWeather(document.getElementById('search-input').value);
-  }
-});
+      .then((data) => displayWeather(data));
+  },
+};
 
 const setTemp = (temp, unit) => {
   const Fahrenheit = ((temp * (9 / 5)) + 32).toFixed(2);
@@ -90,4 +74,15 @@ const setTemp = (temp, unit) => {
     unit.textContent = Celsius + "C";
     convert.textContent = "click for Fahrenheint"
   }
-}
+};
+
+document.getElementById('search-btn').addEventListener('click', () => {
+  weather.fetchWeather(document.getElementById('search-input').value);
+  console.log(document.getElementById('search-input').value);
+});
+
+document.getElementById('search-input').addEventListener('keyup', (e) => {
+  if (e.key === 'Enter') {
+    weather.fetchWeather(document.getElementById('search-input').value);
+  }
+});

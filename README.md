@@ -14,7 +14,9 @@ Original project specification: [The Odin Project](https://www.theodinproject.co
 
 ## Screenshots
 
-![screenshot](./assets/imgs/screenshot.png)
+![screenshot](./assets/imgs/screenshot2.png)
+![screenshot](./assets/imgs/screenshot3.png)
+![screenshot](./assets/imgs/screenshot4.png)
 
 ## Live Demo
 [Weather App](https://anapdh.github.io/weather-app/dist/index.html)
@@ -65,4 +67,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](https://github.com/anapdh/weather-app/blob/develop/LICENSE.md) licensed.

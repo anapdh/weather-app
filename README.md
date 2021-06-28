@@ -19,7 +19,7 @@ Original project specification: [The Odin Project](https://www.theodinproject.co
 ![screenshot](./assets/imgs/screenshot4.png)
 
 ## Live Demo
-[Weather App](https://anapdh.github.io/weather-app/dist/index.html)
+[Weather App](https://anapdh.github.io/weather-app/)
 
 ## Prerequisites
 
